@@ -1,7 +1,18 @@
-<h1>Hola Angular</h1>
-<p>Saludos desde {{ city.toUpperCase() }} </p>
-<app-user />
-<app-user />
-<app-user />
-<app-user></app-user>
-<router-outlet></router-outlet>
+<h1>Proyecto con Angular</h1>
+<!--<p>Saludos desde {{ city.toUpperCase() }} </p>-->
+
+<!-- Que me parece angular y su parrafo-->
+
+
+@defer (on viewport) {
+  <app-user />
+
+} @placeholder {
+  <p>Futuros comentarios</p>
+} @loading (minimum 2s) {
+  <section class="section__loader">
+    <div class="spinner"></div>
+  </section>
+
+}
+

@@ -1,8 +1,30 @@
-@if(isLoggedIn){
-  <p>Bienvenido, {{ username }}</p>
+<section>
 
-} @else {
-  <p>Por favor, inicia sesión</p>
-}
+  @if(isLoggedIn){
+    <p>Bienvenido, {{ username }}</p>
+    <img
+      (click)="greet()"
+      src="https://github.com/ilanangelesrodriguez.png"
+      alt="photo"
+    >
+    <app-games
+      (addFavoriteEvent)="getFavorite($event)"
+      username="{{ username }}"
+    />
 
+    @if (favGame !== '') {
+      <p>Tu juego favorito es {{ favGame }}</p>
+    }
+
+    <button (click)="isLoggedIn = false">Logout</button>
+
+
+  } @else {
+    <p>Por favor, inicia sesión</p>
+    <button (click)="isLoggedIn = true">Login</button>
+
+    <app-comments />
+  }
+
+</section>
 
