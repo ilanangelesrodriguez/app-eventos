@@ -7,14 +7,13 @@
       src="https://github.com/ilanangelesrodriguez.png"
       alt="photo"
     >
-    <app-games />
+    <app-games username="{{ username }}"/>
     <button (click)="isLoggedIn = false">Logout</button>
 
 
   } @else {
     <p>Por favor, inicia sesión</p>
     <button (click)="isLoggedIn = true">Login</button>
-
   }
 
 </section>
