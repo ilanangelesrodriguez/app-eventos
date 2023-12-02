@@ -1,12 +1,14 @@
 section {
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
-  padding-top: 32px;
   font-size: 24px;
   text-align: center;
 }
 
 img {
+  margin: auto;
   height: 5em;
   border-radius: 20px;
   box-shadow: -9px 9px 18px #5a5a5a,
@@ -21,6 +23,7 @@ img:hover {
 }
 
 button {
+  margin: auto;
   position: relative;
   padding: 1em 2.5em;
   border-radius: 50px;
