@@ -1,8 +1,11 @@
-@if(isLoggedIn){
-  <p>Bienvenido, {{ username }}</p>
+<section>
 
-} @else {
-  <p>Por favor, inicia sesión</p>
-}
+  @if(isLoggedIn){
+    <p>Bienvenido, {{ username }}</p>
 
+  } @else {
+    <p>Por favor, inicia sesión</p>
 
+  }
+
+</section>
