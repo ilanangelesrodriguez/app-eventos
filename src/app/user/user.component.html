@@ -2,10 +2,20 @@
 
   @if(isLoggedIn){
     <p>Bienvenido, {{ username }}</p>
+    <img
+      (click)="greet()"
+      src="https://github.com/ilanangelesrodriguez.png"
+      alt="photo"
+    >
+    <app-games />
+    <button (click)="isLoggedIn = false">Logout</button>
+
 
   } @else {
     <p>Por favor, inicia sesión</p>
+    <button (click)="isLoggedIn = true">Login</button>
 
   }
 
 </section>
+
