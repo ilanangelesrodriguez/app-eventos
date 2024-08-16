@@ -1,6 +1,6 @@
 import { Usuario } from "@/models/usuario.model";
 import { RegistrarUsuario } from "@/usecases/registrarUsuario";
-import { UsuarioRepository } from "@/repositories/usuarioRepository";
+import { UsuarioRepository } from "@/services/repositories/usuario.repository";
 
 export class UsuarioService {
     private registrarUsuario: RegistrarUsuario;

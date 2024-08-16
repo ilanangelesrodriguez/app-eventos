@@ -9,9 +9,10 @@ export default function DocsPage() {
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>About</h1>
 
-          <Form />
-
         </div>
+
+        <Form />
+
       </section>
     </DefaultLayout>
   );

@@ -1,4 +1,4 @@
-import { IUsuarioRepository } from "@/interfaces/IUsuarioRepository";
+import { IUsuarioRepository } from "@/services/interfaces/IUsuarioRepository";
 import { Usuario } from "@/models/usuario.model";
 
 export class RegistrarUsuario {
