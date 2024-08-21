@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
+import {User } from "@nextui-org/react";
 import {
   Navbar as NextUINavbar,
   NavbarBrand,
@@ -16,7 +17,6 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-  TwitterIcon,
   GithubIcon,
   HeartFilledIcon,
   SearchIcon,
@@ -76,14 +76,24 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
           <Link isExternal href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
+
+        <User   
+          name="Ilan Angeles"
+          description={(
+            <Link href="https://x.com/ilanangeles1282" size="sm" isExternal>
+              @ilanangeles1282
+            </Link>
+          )}
+          avatarProps={{
+            src: "https://media.licdn.com/dms/image/v2/D4E03AQFTQ6_3yinXmw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700137551601?e=2147483647&v=beta&t=np1_2mLU22T6ShrS9PuY_Zj5eWCd5fhwz8Mgvbwp3Ic"
+          }}
+        />
+
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button

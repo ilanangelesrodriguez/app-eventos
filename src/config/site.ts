@@ -9,12 +9,8 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Eventos",
+      href: "/eventos",
     },
     {
       label: "Blog",
@@ -27,33 +23,25 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Inicio",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Eventos",
+      href: "/eventos",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Blog",
+      href: "/blog",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Sobre Nosotros",
+      href: "/nosotros",
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
+    github: "https://github.com/ilanangelesrodriguez",
+    twitter: "https://x.com/ilanangeles1282",
     docs: "https://nextui-docs-v2.vercel.app",
     discord: "https://discord.gg/9b6yyZKmH4",
     sponsor: "https://patreon.com/jrgarciadev",
