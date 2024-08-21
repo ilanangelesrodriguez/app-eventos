@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Vite + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "SISUNS Eventos",
+  description: "Página para gestionar la inscripción de eventos.",
   navItems: [
     {
       label: "Inicio",
@@ -39,20 +39,12 @@ export const siteConfig = {
       href: "/projects",
     },
     {
-      label: "Team",
-      href: "/team",
-    },
-    {
       label: "Calendar",
       href: "/calendar",
     },
     {
       label: "Settings",
       href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
     },
     {
       label: "Logout",

@@ -29,6 +29,6 @@ class ApiConnection {
     }
 }
 
-const URL = 'http://localhost:3000';
+const URL = 'https://communist-viki-ilanangelesrodriguez-a7079bf8.koyeb.app/';
 const apiConnection = new ApiConnection(URL);
 export default apiConnection;
