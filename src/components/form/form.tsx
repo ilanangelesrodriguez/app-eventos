@@ -3,7 +3,7 @@ import { Spacer } from "@nextui-org/spacer";
 import { Button } from '@nextui-org/button';
 import { DateInput } from "@nextui-org/date-input";
 import { CalendarDate } from "@internationalized/date";
-import {  Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter, useDisclosure} from "@nextui-org/modal";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
 import { CalendarIcon } from './calendarIcon';
 import useForm from '@/hooks/useForm';
 import React, { useState } from 'react';
@@ -31,10 +31,12 @@ export default function Form() {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const errorMessages = Object.values(errors).filter(error => error);
-        if (errorMessages.length > 0) {
-            setModalContent(`Errores:\n${errorMessages.join('\n')}`);
+        const emptyFields = Object.values(formData).filter(value => !value);
+
+        if (errorMessages.length > 0 || emptyFields.length > 0) {
+            setModalContent('Hay errores en el formulario o campos vacíos.');
         } else {
-            setModalContent(`Formulario:\n${JSON.stringify(formData, null, 2)}`);
+            setModalContent('Formulario listo para enviar.');
         }
         onOpen();
     };
@@ -114,21 +116,68 @@ export default function Form() {
                 {submitError && <p className="text-red-500">{submitError}</p>}
             </form>
 
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+            <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="center">
                 <ModalContent>
                     {(onClose) => (
                         <>
-                            <ModalHeader className="flex flex-col gap-1">Confirmación</ModalHeader>
+                            <ModalHeader className="flex flex-col ">Confirmación</ModalHeader>
                             <ModalBody>
-                                <pre>{modalContent}</pre>
+                                {modalContent === 'Formulario listo para enviar.' ? (
+                                    <>
+                                        <Input
+                                            label="Nombre"
+                                            name="nombre"
+                                            value={formData.nombre}
+                                            isDisabled
+                                        />
+                                        <Input
+                                            label="Apellido"
+                                            name="apellido"
+                                            value={formData.apellido}
+                                            isDisabled
+                                        />
+                                        <Input
+                                            label="Email"
+                                            name="email"
+                                            value={formData.email}
+                                            isDisabled
+                                        />
+                                        <Input
+                                            label="Teléfono"
+                                            name="telefono"
+                                            value={formData.telefono}
+                                            isDisabled
+                                        />
+                                        <Input
+                                            label="Dirección"
+                                            name="direccion"
+                                            value={formData.direccion}
+                                            isDisabled
+                                        />
+                                        <DateInput
+                                            isDisabled
+                                            label="Fecha de registro"
+                                            defaultValue={currentDate}
+                                            placeholderValue={currentDate}
+                                            labelPlacement="outside"
+                                            startContent={
+                                                <CalendarIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                            }
+                                        />
+                                    </>
+                                ) : (
+                                    <p>{modalContent}</p>
+                                )}
                             </ModalBody>
                             <ModalFooter>
                                 <Button color="danger" variant="flat" onPress={onClose}>
                                     Cerrar
                                 </Button>
-                                <Button color="primary" onPress={confirmSubmit}>
-                                    Confirmar
-                                </Button>
+                                {modalContent === 'Formulario listo para enviar.' && (
+                                    <Button color="primary" onPress={confirmSubmit}>
+                                        Confirmar
+                                    </Button>
+                                )}
                             </ModalFooter>
                         </>
                     )}
