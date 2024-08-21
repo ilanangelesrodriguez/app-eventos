@@ -16,7 +16,7 @@ export default function Form() {
 
     const currentDate = getCurrentDate();
 
-    const [formData, handleChange, errors, handleSubmit, submitError, touched] = useForm({
+    const [formData, handleChange, errors, handleSubmit, , touched] = useForm({
         nombre: '',
         apellido: '',
         email: '',
