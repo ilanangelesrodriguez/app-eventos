@@ -42,7 +42,7 @@ function useForm(initialState: Usuario) {
         }));
     }
 
-    async function handleSubmit() {
+    async function handleSubmit(): Promise<boolean> {
         try {
             const fechaRegistro = new Date().toISOString();
             const dataToSend = { ...formData, fechaRegistro };
@@ -50,9 +50,11 @@ function useForm(initialState: Usuario) {
             await usuarioService.registrar(dataToSend);
             console.log('Usuario registrado:', dataToSend);
             setSubmitError(null);
+            return true; // Devuelve true si el envío es exitoso
         } catch (error) {
             setSubmitError('Error registrando el usuario. Por favor, inténtelo de nuevo.');
             console.error(error);
+            return false; // Devuelve false si hay un error
         }
     }
 

@@ -42,8 +42,14 @@ export default function Form() {
     };
 
     const confirmSubmit = async () => {
-        await handleSubmit();
+        const result = await handleSubmit();
+        if (result) {
+            setModalContent('Registro realizado exitosamente.');
+        } else {
+            setModalContent('Error. Por favor, inténtelo de nuevo.');
+        }
         onOpenChange();
+        onOpen();
     };
 
     return (
@@ -113,7 +119,6 @@ export default function Form() {
                         Eliminar
                     </Button> 
                 </div>
-                {submitError && <p className="text-red-500">{submitError}</p>}
             </form>
 
             <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="center">
