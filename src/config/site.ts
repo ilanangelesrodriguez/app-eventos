@@ -44,6 +44,6 @@ export const siteConfig = {
     twitter: "https://x.com/ilanangeles1282",
     docs: "https://nextui-docs-v2.vercel.app",
     discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    sponsor: "https://github.com/ilanangelesrodriguez",
   },
 };

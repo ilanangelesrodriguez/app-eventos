@@ -54,7 +54,7 @@ export default function Form() {
 
     return (
         <>
-            <form onSubmit={handleFormSubmit} className='flex flex-col justify-center w-1/3 m-auto max-md:w-3/4'>
+            <form onSubmit={handleFormSubmit} className='flex flex-col justify-center w-1/3 m-auto max-md:w-3/4 pb-12'>
                 <Input
                     label="Nombre"
                     name="nombre"
@@ -111,7 +111,7 @@ export default function Form() {
                     }
                 />
                 <Spacer y={1} />
-                <div className='m-auto flex justify-evenly gap-x-4'>
+                <div className='m-auto flex justify-evenly gap-x-4 pt-3'>
                     <Button color="primary" variant="shadow" type='submit'>
                         Enviar
                     </Button>
