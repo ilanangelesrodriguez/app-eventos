@@ -1,4 +1,3 @@
-// src/repositories/usuarioRepository.ts
 import { IUsuarioRepository } from "@/services/interfaces/IUsuarioRepository";
 import { Usuario } from "@/models/usuario.model";
 import apiConnection from "@/services/apiConnection";

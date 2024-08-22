@@ -34,10 +34,6 @@ export const siteConfig = {
       label: "Blog",
       href: "/blog",
     },
-    {
-      label: "Sobre Nosotros",
-      href: "/nosotros",
-    },
   ],
   links: {
     github: "https://github.com/ilanangelesrodriguez",
